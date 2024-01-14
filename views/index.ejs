@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for(post of posts) { %>
+
+     <div class="posts">
+        <div class="image">
+           <img src="<%=post.image%>" alt="No image">
+         <h3 class="user">@<%= post.username %></h3>
+         </div>
+         <div class="content">
+        <h4><%= post.content %></h4>
+        <a href="http://localhost:8080/posts/<%=post.username%>" >Open Post</a>
+        <a href="http://localhost:8080/posts/<%=post.username%>/edit">Edit Post</a>
+
+         <form method="post" action="/posts/<%=post.username%>?_method=DELETE" style="display:inline-block;">
+           <button>Delete Post</button>
+        </form>
+        </div>
+     </div>
+    <% } %>
+    <br>
+
+   <div class="new_post">
+    <a href="http://localhost:8080/posts/new">Create New Post</a>
+   </div>
+
+
+   <%- include("includes/footer.ejs") %>
+</body>
+</html>

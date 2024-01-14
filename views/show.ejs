@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post of @<%= post.username%></title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <h3 style="background-color: rgb(240, 215, 182); font-size: 20px; height:25px;width:420px; border:2px solid black;border-radius:5px;"> Post id:<%=post.id%> </h3>
+    <div class="posts">
+        <div class="image">
+           <img src="<%=post.image%>" alt="No image">
+         <h3 class="user">@<%= post.username %></h3>
+         </div>
+        <h4 class="content"><%= post.content %></h2>
+     </div>
+</body>
+</html>
